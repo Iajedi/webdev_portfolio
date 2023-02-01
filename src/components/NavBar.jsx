@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
+import { Link } from "react-scroll";
 
 const NavBar = () => {
 const [nav, setNav] = useState(false);
@@ -8,27 +9,32 @@ const [nav, setNav] = useState(false);
         { 
             id: 1,
             link: 'home',
-            color: 'hover:text-amber-400'
+            color: 'hover:text-amber-400',
+            scrollLink: 'home'
         },
         {
             id: 2,
             link: 'about',
-            color: 'hover:text-red-400'
+            color: 'hover:text-red-400',
+            scrollLink: 'about'
         },
         {
             id: 3,
             link: 'minecraft builds',
-            color: 'hover:text-green-400'
+            color: 'hover:text-green-400',
+            scrollLink: 'portfolio'
         },
         {
             id: 4,
             link: 'code',
-            color: 'hover:text-blue-400'
+            color: 'hover:text-blue-400',
+            scrollLink: 'experience'
         },
         {
             id: 5,
             link: 'contact',
-            color: 'hover:text-purple-400'
+            color: 'hover:text-purple-400',
+            scrollLink: 'contact'
         },
     ]
   return (
@@ -40,14 +46,14 @@ const [nav, setNav] = useState(false);
         </div>
 
         <ul className='hidden md:flex text-amber-400'>
-            {links.map(({link, id, color}) => (
+            {links.map(({link, id, color, scrollLink}) => (
             <li
             key={id}
             className={
                 `px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 ${color}`  
             }
             >
-                {link}
+                <Link to={scrollLink} smooth duration={500}>{link}</Link>
             </li>
             ))}
         </ul>
