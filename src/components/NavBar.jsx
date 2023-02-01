@@ -1,0 +1,74 @@
+import React, { useState } from 'react'
+import {FaBars, FaTimes} from 'react-icons/fa'
+
+const NavBar = () => {
+const [nav, setNav] = useState(false);
+
+    const links = [
+        { 
+            id: 1,
+            link: 'home',
+            color: 'hover:text-amber-400'
+        },
+        {
+            id: 2,
+            link: 'about',
+            color: 'hover:text-red-400'
+        },
+        {
+            id: 3,
+            link: 'minecraft builds',
+            color: 'hover:text-green-400'
+        },
+        {
+            id: 4,
+            link: 'code',
+            color: 'hover:text-blue-400'
+        },
+        {
+            id: 5,
+            link: 'contact',
+            color: 'hover:text-purple-400'
+        },
+    ]
+  return (
+    <div className='flex justify-between items-center w-full h-20 text-white fixed bg-black px-5'>
+        <div>
+            <h1 className='text-5xl font-signature ml-2'>
+                IAJEDI
+                </h1>
+        </div>
+
+        <ul className='hidden md:flex text-amber-400'>
+            {links.map(({link, id, color}) => (
+            <li
+            key={id}
+            className={
+                `px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 ${color}`  
+            }
+            >
+                {link}
+            </li>
+            ))}
+        </ul>
+        <div onClick={() => setNav(!nav)} className='cursor-pointer pr-4 z-10 text-gray-500 md:hidden'>
+            {nav ? <FaTimes size={35} /> : <FaBars size={35} />}
+        </div>
+
+        {nav && (
+        <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-slate-600 text-gray-500'>
+        {links.map(link => (
+            <li
+            key={link.id}
+            className='px-4 cursor-pointer capitalize py-6 text-4xl text-gray-500 hover:scale-105 hover:text-yellow-400'
+            >
+                {link.link}
+            </li>
+            ))}
+        </ul>
+        )}
+    </div>
+  )
+}
+
+export default NavBar
