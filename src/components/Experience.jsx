@@ -45,7 +45,7 @@ const Experience = () => {
             id: 6,
             src: react,
             title: "React",
-            style: 'shadow-blue-600'
+            style: 'shadow-cyan-600'
         },
         {
             id: 7,
@@ -57,7 +57,7 @@ const Experience = () => {
             id: 8,
             src: node,
             title: "Node",
-            style: 'shadow-cyan-500'
+            style: 'shadow-lime-500'
         },
     ]
 

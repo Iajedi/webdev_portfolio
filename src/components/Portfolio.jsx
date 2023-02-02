@@ -50,7 +50,7 @@ export const Portfolio = () => {
                         <div key={id} className=' shadow-md shadow-lime-400 rounded-lg'>
                             <img src={src} alt="" className='rounded-md duration-200 hover:scale-105'/>
                             <div className=' flex items-center justify-center'>
-                                <button className='w-1/2 px-6 py-1 m-4 duration-200 hover:scale-105 hover:text-lime-400 hover:font-semibold'>Showcase</button>
+                                <button className='w-1/2 px-6 py-1 m-4 duration-200 hover:scale-105 hover:text-lime-400 hover:font-semibold'>Demo</button>
                                 <button className='w-1/2 px-6 py-0 m-4 duration-200 hover:scale-105 hover:text-lime-400 hover:font-semibold'>Download</button>
                             </div>
                         </div>
